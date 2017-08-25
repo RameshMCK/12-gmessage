@@ -26,12 +26,16 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'popper_js'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'font-awesome-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-    gem 'pry'
+  gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'faker'
@@ -45,10 +49,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'popper_js'
+  gem 'jquery-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

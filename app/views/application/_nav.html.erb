@@ -6,19 +6,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   
-  <ul>
-    <% if @is_logged_in %>
-      <li><%= @user.email %></li>
-      <li><a href="/users/edit">Profile</a></li>
-      <li><%= link_to "Log Off", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><a href="/users/sign_in">Sign In</a></li>
-      <li><a href="/users/sign_up">Sign Up</a></li>
-    <% end %>
-  </ul>
-       
-        
-  </div>
+<ul>
+  <% if @is_logged_in %>
+    <li><%= @user.email %></li>
+    <li><a href="/users/edit">Profile</a></li>
+    <li><%= link_to "Log Off", destroy_user_session_path, method: :delete %></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/messages">Messages</a></li>
+    <li><a href="/messages/<%= @user.id %>/sent">Sent Messages</a></li>
+    <li><a href="/messages/sent_messages">Favorite Messages</a></li>
+  <% else %>
+    <li><a href="/users/sign_in">Sign In</a></li>
+    <li><a href="/users/sign_up">Sign Up</a></li>
+  <% end %>
+</ul>
 </nav>
 
 

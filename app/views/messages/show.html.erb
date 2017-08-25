@@ -1,0 +1,8 @@
+
+<%= image_tag(@message.sender.photo, width: 75, height: 75, class: 'img-thumbnail') if @message.sender.photo %>
+<h3 class="p-2">Message Body</h3>
+
+ <div class="col-4">
+<%= @message.body %>
+</div>
+

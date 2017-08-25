@@ -2,11 +2,12 @@
 #
 # Table name: messages
 #
-#  id      :integer          not null, primary key
-#  from_id :integer          not null
-#  to_id   :integer          not null
-#  subject :string           not null
-#  body    :text
+#  id          :integer          not null, primary key
+#  from_id     :integer          not null
+#  to_id       :integer          not null
+#  subject     :string           not null
+#  body        :text
+#  is_favorite :boolean          default(TRUE)
 #
 
 class Message < ApplicationRecord

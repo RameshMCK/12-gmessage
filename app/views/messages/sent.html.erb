@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Sent To</th>
+      <th>Subject</th>
+      <th>Date</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sent_messges.each do |m| %>
+      <tr style="color: <%= m.sender.color %> "></tr>
+        <td><%= m.id %></td>   
+        <td>
+          <%= m.receiver.email %>
+        </td>
+        
+        <td><%= m.subject %></td>
+        <td>created dt</td>
+        <td><%= m.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

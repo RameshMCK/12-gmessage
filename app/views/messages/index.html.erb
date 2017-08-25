@@ -1,0 +1,36 @@
+<h1>Messages</h1>
+
+<%= link_to 'Compose', new_message_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Delete</th>
+      <th>Id</th>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @received.each do |m| %>
+      <tr style="color: <%= m.sender.color %> " </tr>
+        <td>
+               <%= link_to message_path(m), method: :delete do %>
+                <i class="fa fa-trash-o"></i>
+                <% end %>
+           </td>
+        <td><%= link_to m.id, m %></td>   
+        <td>
+          <%= image_tag(m.sender.photo, width: 75, height: 75, class: 'img-thumbnail') if m.sender.photo %>
+          <%= m.sender.email %>
+        
+        </td>
+        
+        
+        <td><%= m.subject %></td>
+        <td>created dt</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
