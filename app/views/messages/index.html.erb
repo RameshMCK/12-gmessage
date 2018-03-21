@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Delete</th>
+      <th>Favorite</th>
       <th>Id</th>
       <th>From</th>
       <th>Subject</th>
@@ -20,6 +21,18 @@
                 <i class="fa fa-trash-o"></i>
                 <% end %>
            </td>
+          
+        <td>  
+         <%= form_with(url: save_favorite_message_path(@message), local: true, method: :patch) do |form| %>
+          <%= check_box("puppy", "gooddog", {}, "yes", "no") %>
+
+        <%= link_to save_favorite_message_path(m), method: :patch do %>
+                <i class="fa fa-star"></i>
+                <% end %>
+      
+        <% end %>
+  
+      </td>   
         <td><%= link_to m.id, m %></td>   
         <td>
           <%= image_tag(m.sender.photo, width: 75, height: 75, class: 'img-thumbnail') if m.sender.photo %>

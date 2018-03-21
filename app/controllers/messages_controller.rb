@@ -10,6 +10,17 @@ class MessagesController < ApplicationController
         @message =  Message.new
     end
     
+    def save_favorite
+         @message = Message.find(params[:id])
+         binding.pry
+         if @message.update(params[:message].permit(:is_favorite))
+          redirect_to @message
+        else
+          render 'index'
+        end
+         
+    end
+
 
     def sent
         #binding.pry
